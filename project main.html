@@ -1,0 +1,700 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awsome/4.7.0/css/font-awsome.min.css">
+ 	   <meta name="viewport" content="width=device-width, initial-scale=1>
+	   <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Tpe">
+	   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<title>FAST FOOD CORNER</title>
+
+<style>
+ .links:hover
+ {
+  border-radius:10px;
+  background-color:red;
+ }
+ .zoom:hover
+ {
+  transition:transform 0.4s;
+  transform:scale(1.05);
+ }
+
+#home .content h1 {
+  font-size: 5rem;
+  font-family: 'lemonada',sans-serif;
+  font-weight: bolder;
+  text-shadow: .1rem .1rem .3rem #333;
+  color: red;
+}
+
+#home .content h2 {
+  font-size: 3.5rem;
+  font-family: 'lemonada',sans-serif;
+  font-weight: bolder;
+  text-shadow: .1rem .1rem .3rem #333;
+  color: yellow;
+  margin: 1rem 0;
+}
+
+#home .content p {
+  font-size: 1.6rem;
+  color: blue;
+}
+
+#home .content button {
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: .2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 4rem;
+  width: 14rem;
+  background: #fff;
+}
+
+#home .content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFF200;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  z-index: -1;
+}
+
+#home .content button:hover::before {
+  width: 100%;
+}
+
+#home .carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+ #about .heading h1 {
+  font-size: 4rem;
+  color: #000;
+  padding-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+#about .heading h1 span {
+  color: #FFF200;
+}
+
+#about .content {
+  margin: 5rem auto;
+}
+
+#about .content p {
+  font-size: 2rem;
+}
+
+#about .content button {
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: .2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 4rem;
+  width: 14rem;
+  background: #333;
+  color: #fff;
+}
+
+#about .content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFF200;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  z-index: -1;
+}
+
+#about .content button:hover::before {
+  width: 100%;
+}
+
+#about .content button:hover {
+  color: #333;
+}
+
+#about .image img {
+  width: 30vw;
+}
+#review {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+#review .heading h1 {
+  font-size: 4rem;
+  color: grey;
+  padding-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+#review .heading h1 span {
+  color: orange;
+}
+
+.review-div {
+	margin-top: 50px;
+	color: cyan;
+}
+
+.info {
+	text-align: left;
+	
+}
+.info p {
+	font-size: 2rem;
+	color: black;
+}
+.book {
+    height: 150%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("fast food.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.book-card {
+    height: 100%;
+    width: 40%;
+    background-color: #fff;
+    margin: 6rem auto;
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    padding-bottom: 5rem;
+}
+
+.book-card h3 {
+    margin-bottom: 5rem;
+}
+
+.form-group {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+input {
+    border: transparent;
+    border-bottom: 2px solid #ccc;
+    transition: all 0.8s;
+    width: 70%;
+}
+
+input:focus {
+    border-bottom: 2px solid #ff7417;
+    outline: none;
+}
+
+select {
+    border: transparent;
+    border-bottom: 2px solid #ccc;
+}
+
+select:focus {
+    outline: none;
+}
+
+.btn-book {
+    display: flex;
+    justify-content: center;
+    
+    font-size: 1.4rem;
+}
+#contact {
+  min-height: 100vh;
+  width: 100vw;
+  background: url(../Images/back.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#contact .heading h1 {
+  font-size: 4rem;
+  color: #000;
+  padding-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+#contact .heading h1 span {
+  color: #FFF200;
+}
+
+#contact form {
+  background: #fff;
+  padding-top: 2rem;
+  margin: 1rem 2rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 2rem #333;
+          box-shadow: 0 0 2rem #333;
+}
+
+#contact form .inputBox {
+  position: relative;
+  text-align: center;
+}
+
+#contact form .inputBox input, #contact form .inputBox textarea {
+  outline: none;
+  border: .2rem solid #333;
+  border-radius: .2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  background: none;
+  height: 4rem;
+  width: 90%;
+  font-size: 2rem;
+}
+
+#contact form .inputBox input:focus ~ h3,
+#contact form .inputBox input:valid ~ h3, #contact form .inputBox textarea:focus ~ h3,
+#contact form .inputBox textarea:valid ~ h3 {
+  font-size: 1.6rem;
+  left: 6%;
+  top: -.5rem;
+  color: #ff3300;
+}
+
+#contact form .inputBox textarea {
+  padding: 1rem;
+  resize: none;
+  height: 20rem;
+}
+
+#contact form .inputBox h3 {
+  position: absolute;
+  top: 3rem;
+  left: 7%;
+}
+
+#contact form input[type="submit"] {
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: .2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+  margin-bottom: 2rem;
+  margin-left: 4%;
+  background: #333;
+  color: #fff;
+}
+
+#contact form input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFF200;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: .2s;
+  transition: .2s;
+  z-index: -1;
+}
+
+#contact form input[type="submit"]:hover::before {
+  width: 100%;
+}
+
+#contact form input[type="submit"]:hover {
+  color: #333;
+  background: #FF8C00;
+}
+
+#footer {
+  background: #333;
+}
+
+#footer h1 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+#footer h1 span {
+  color: #FFA500;
+}
+
+#footer .brand {
+  text-align: center;
+  margin-top: 2rem;
+}
+ .contact {
+   text-align: center;
+   color: #FF8C00;
+   margin-top: 2rem;
+   }
+}
+
+</style> 
+<link rel="shortcut icon" href="fevicon.ico">
+</head>
+
+<body>
+<table border="0" width="100%" height="8%">
+<tr>
+<td  width="11.1%" align="center" bgcolor="black" class="links"><font color="white"><a href="#HOME">HOME</a></td>
+<td  width="11.1%" align="center" bgcolor="black" class="links"><font color="white"><a href="#ABOUT US">ABOUT US</a></td>
+<td  width="11.1%" align="center" bgcolor="black"class="links"><font color="white"><a href="#MENU">MENU</a></td>
+<td  width="11.1%" align="center" bgcolor="black"class="links"><font color="white"><a href="#VARITIES">VARITIES</a></td>
+<td width="11.1%" align="center" bgcolor="black"class="links"><font color="white"><a href="#REVIEWS">REVIEWS</a></td>
+<td width="11.1%" align="center" bgcolor="black"class="links"><font color="white"><a href="#BOOK YOUR TABLE">BOOK YOUR TABLE</a></td>
+<td width="11.1%" align="center" bgcolor="black"class="links"><font color="white"><a href="#FEEDBACK">QUERY & FEEDBACK</a></td>
+</tr>
+</table>
+<!-- home section starts  -->
+
+<section id="home" class="container-fluid">
+
+<div class="row min-vh-100 align-items-center">
+    
+<div class="coantainer-fluid col-md-8 ml-md-5 text-md-left text-center content">
+    <h1>FAST FOOD CORNER</h1>
+    <h2>Fun With Taste</h2>
+    <p>Enjoy All Range Of Fast Food Here.</p>
+</div>
+<div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active coantainer-fluid">
+      <img class="coantainer-image" width="100%" height="100%"src="fast food 2.jpg">
+    </div>
+
+    <div class="carousel-item coantainer-fluid">
+      <img class="coantainer-image" width="100%" height="100%" src="fast food 3.jpg">
+    </div>
+
+    <div class="carousel-item coantainer-fluid">
+      <img class="coantainer-image" width="100%" height="100%" src="main 1.jpg">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="controls">
+    <div class="dots dot1"></div>
+    <div class="dots dot2"></div>
+    <div class="dots dot3"></div>
+</div>
+</div>
+<!-- about section starts  -->
+<p id="ABOUT US"></p>
+<section id="about" class="container">
+
+    <div class="heading text-center">
+    <h1><span>About</span> us</h1>
+    </div>
+
+    <div class="row min-vh-100">
+
+        <div class="col-md-6 text-center text-md-left align-self-center content">
+            <p>We provide a high standard of food quality and ensure that guests are getting the same high quality in every meal.The staff who interact with the guests in the restaurants are polite and well-mannered
+			    and maintain a positive attitude.Waters who are working in the restaurant should know the menu very well, deliver costumers food and drinks on time, and quickly address any issues that an unsatisfied 
+				costumers may have. </p>
+            <p>We have the experience of more than 5 years.We charge reasonable prices for food. <b>Fun With Taste </b>.</p>
+            <a href="#"><button>Learn more</button></a>
+        </div>
+
+        <div class="col-md-6 image">
+            <img src="chef.jpg" alt="">
+        </div>
+
+    </div>
+
+</section>
+<p id="MENU"></p>
+<section id="footer" class="container-fluid">
+    <div class="heading text-center">
+        <h1><span>MENU</span></h1>
+    </div>
+<img src="menu 1.jpg" width="100%" height="95%">
+</section>
+<table>
+<tr>
+<td></td>
+<td align="center"><p id="VARITIES"><b><u><h2>VARITIES</h2></u></b></p></td>
+</tr>
+<tr>
+<td align="center" class="zoom"><img src="pizza.jpg" height="43%"></td>
+<td align="center" class="zoom"><img src="french-fries.jpg" height="43%"></td>
+<td align="center" class="zoom"><img src="pasta 2.jpg" height="94%"></td>
+</tr>
+
+<tr>
+<td align="center"><b><font size="4">PIZZAS</font></b></td>
+<td align="center"><b><font size="4">FRENCH FRIES</font></b></td>
+<td align="center"><b><font size="4">PASTA</font></b></td>
+</tr>
+<br>
+<tr>
+<td align="center" class="zoom"><img src="burger.jpg" height="61%"></td>
+<td align="center" class="zoom"><img src="sandwich.jpg" height="71%"></td>
+<td align="center" class="zoom"><img src="chole bhature.jpg" height="41%"></td>
+</tr>
+<tr>
+<td align="center"><b><font size="4">BURGERS</font></b></td>
+<td align="center"><b><font size="4">SANDWICHS</font></b></td>
+<td align="center"><b><font size="4">CHOLE BHATURE</font></b></td>
+</tr>
+</table>
+<!-- review section starts  -->
+<p id="REVIEWS"></p>
+<section id="review" class="container">
+
+    <div class="heading text-center">
+        <h1>Our <span>REVIEWS</span></h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 review-div">
+            <div class="info">
+                <h3>Vijay Singhal</h3>
+                <p>This is the best Restaurant for fast food. Great food with Great services.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 review-div">
+            <div class="info">
+                <h3>Manoj Jain</h3>
+                <p>Environment is too melodious inside the restaurant.The best part is here is we cant eat all types of pizzas.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 review-div">
+            <div class="info">
+                <h3>Rupam Goyal</h3>
+                <p>The food is amazing – everything we tasted melted in other mouths. Highly recommend!</p>
+            </div>
+        </div>
+		
+		<div class="col-lg-6 col-md-6 review-div">
+            <div class="info">
+                <h3>Vikas Agrawal</h3>
+                <p> The food is always fantastic and no matter what I order I am always delighted with my meal!</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+<p id="BOOK YOUR TABLE"></p>
+<section class="book" id="reservation">
+                <div class="container-fluid">
+               <div class="heading text-center">
+        <h1><span>Book Your Table</span> Now</h1>
+    </div>
+                        <div class="two-columns-grid">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    id="first"
+                                    class="input"
+                                    placeholder="First Name*"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    id="last"
+                                    class="input"
+                                    placeholder="Last Name*"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="two-columns-grid">
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="input"
+                                    placeholder="E-mail Address*"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    id="phone"
+                                    class="input"
+                                    placeholder="Phone Number"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="three-columns-grid">
+                            <div class="form-group">
+                                <input type="date" id="date" />
+                            </div>
+                            <div class="form-group">
+                                <select name="time" id="time">
+                                    <option value="">9:00</option>
+                                    <option value="">9:30</option>
+                                    <option value="">10:00</option>
+                                    <option value="">10:30</option>
+                                    <option value="">11:00</option>
+                                    <option value="">11:30</option>
+                                    <option value="">12:00</option>
+                                    <option value="">12:30</option>
+                                    <option value="">13:00</option>
+                                    <option value="">13:30</option>
+                                    <option value="">14:00</option>
+                                    <option value="">14:30</option>
+                                    <option value="">15:00</option>
+                                    <option value="">15:30</option>
+                                    <option value="">16:00</option>
+                                    <option value="">16:30</option>
+                                    <option value="">17:00</option>
+                                    <option value="">17:30</option>
+                                    <option value="">18:00</option>
+                                    <option value="">18:30</option>
+                                    <option value="">19:00</option>
+                                    <option value="">19:30</option>
+                                    <option value="">20:00</option>
+                                    <option value="">20:30</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="persons" id="persons">
+                                    <option value="">Persons*</option>
+                                    <option value="">1 Person</option>
+                                    <option value="">2 Persons</option>
+                                    <option value="">3 Persons</option>
+                                    <option value="">4 Persons</option>
+                                    <option value="">5 Persons</option>
+                                    <option value="">6 Persons</option>
+                                    <option value="">7 Persons</option>
+                                    <option value="">8 Persons</option>
+                                    <option value="">9 Persons</option>
+                                    <option value="">10 Persons</option>
+                                </select>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-book">Book Now</a>
+                    </div>	
+                </div>
+            </section>
+<p id="FEEDBACK"></p>
+			<section id="contact" class="container-fluid">
+
+    <div class="heading text-center">
+        <h1><span>Query & </span> Feedback</h1>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <form action="" class="col-md-7">
+
+            <div class="inputBox">
+                <input type="text" required>
+                <h3>Full Name</h3>
+            </div>
+
+            <div class="inputBox">
+                <input type="email" required>
+                <h3>E-Mail</h3>
+            </div>
+
+            <div class="inputBox">
+                <textarea required name="" id="" cols="30" rows="10"></textarea>
+                <h3>Message</h3>
+            </div>
+
+            <input type="submit" value="send">
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- contact section ends  -->
+
+<!-- footer section starts  -->
+
+<section id="footer" class="container-fluid">
+
+<div class="row align-items-center">
+
+<div class="col-md-4 brand">
+
+<a href="#" class="logo"><img src="logo.jpg" alt=""></a>
+</div>
+
+</div>
+ <h1><big><span>FUN WITH TASTE</span></big></h1>
+<div class="contact">
+<h5>Contact US<br>
+        at <br> 
+	+91 6378269963	<br>
+	+91 9783984520<br>
+E-mail:- khushi07singhal03@gmail.com</h5>
+</div>
+
+<h1>&copy; copyright @ by <span>KHUSHI SINGHAL</span></h1>
+
+</section>
+
+<!-- footer section ends  -->
+
+</body>
+</html> 
